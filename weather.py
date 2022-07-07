@@ -19,5 +19,5 @@ class Weather():
         
     
 
-a=weather("utrecht")
+a=Weather("utrecht")
 print(a)
