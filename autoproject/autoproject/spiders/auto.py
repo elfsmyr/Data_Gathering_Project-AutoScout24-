@@ -11,47 +11,34 @@ class AutoSpider(scrapy.Spider):
     def parse(self, response):
         hrefs=response.css("div.ListItem_header__uPzec a ::attr(href)").getall()
         for href in hrefs:
-            # print(href)
-            url=response.urljoin(href)
-            # print(url)
+            url = response.urljoin(href)
             yield scrapy.Request(url, callback=self.parse_page)
         
-        next_page=response.css("li.prev-next ::attr(href)")
+        next_page = response.css("li.prev-next ::attr(href)")
         for i in range(2,21):
             if next_page:            
-                url= response.urljoin(next_page.get()) 
-                url=url+str(i)
+                url = response.urljoin(next_page.get()) 
+                url = url+str(i)
                 yield scrapy.Request(url,callback=self.parse)
     
 
     def parse_page(self, response):
-            brand=response.css("div.css-11siofd.errr7t01 span ::text").get()
-            brand1=response.css("div.css-11siofd.errr7t01 span ::text")[1].get()
-            model=response.css("div.css-l08njs ::text").get()
-            model=brand1+model
-            price=response.css("span.StandardPrice_price__X_zzU ::text").get()
-            price=price.split(' ')
-            price=price[1]
-            price=price.replace(',-',' €')
-            km=response.css("div.VehicleOverview_containerMoreThanFourItems__QgCWJ ::text").extract()[1]
-            year=response.css("div.VehicleOverview_containerMoreThanFourItems__QgCWJ ::text").extract()[5]
-            city=response.css("a.scr-link.Department_link__6hDp5 div ::text").extract()[3]
-            city=city.split(" ")
-            city=city[2]
-            city=city.replace(',',' ')
-            plate=response.css("input.css-11jwkmo ::attr(placeholder)").getall()[2]
-            if plate=="":
-                plate='not found'
-            image=response.css("picture.css-1uafc8p.e3j2jx20 img ::attr(src)").get()
-<<<<<<< HEAD
+            brand = response.css("div.css-11siofd.errr7t01 span ::text").get().strip()
+            brand1 = response.css("div.css-11siofd.errr7t01 span ::text")[1].get()
+            model = response.css("div.css-l08njs ::text").get().strip().replace("'", "") 
+            model = brand1+model
+            price = response.css("span.StandardPrice_price__X_zzU ::text").get()
+            price = price.split(' ')
+            price = price[1]
+            price = price.replace(',-',' €')
+            km = response.css("div.VehicleOverview_containerMoreThanFourItems__QgCWJ ::text").extract()[1]
+            year = response.css("div.VehicleOverview_containerMoreThanFourItems__QgCWJ ::text").extract()[5]
+            city = response.css("a.scr-link.Department_link__6hDp5 div ::text").extract()[3]
+            city = city.split(" ")
+            city = city[2]
+            city = city.replace(',',' ').strip()
+            plate = response.css("input.css-11jwkmo ::attr(placeholder)").getall()[2].strip()
+            if plate == "":
+                plate = 'not found'
+            image = response.css("picture.css-1uafc8p.e3j2jx20 img ::attr(src)").get().strip()
             yield {"brand":brand, "model":model,"price":price,"km":km,"year":year,"city":city,"plate":plate, "image":image}
-=======
-            yield {"brand":brand, "model":model,"price":price,"km":km,"year":year,"city":city,"plate":plate, "image":image}
-    
- 
-
-    
-
-        
-           
->>>>>>> 20af2630667904edce73ca3e7cc9dc2d04935182

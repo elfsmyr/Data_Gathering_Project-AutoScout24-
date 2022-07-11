@@ -35,9 +35,9 @@
    <widget class="QComboBox" name="Models">
     <property name="geometry">
      <rect>
-      <x>920</x>
+      <x>869</x>
       <y>180</y>
-      <width>150</width>
+      <width>231</width>
       <height>40</height>
      </rect>
     </property>
@@ -46,11 +46,29 @@
       <pointsize>15</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(166, 0, 0);</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Toyota</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Mercedes-Benz</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>BMW</string>
+     </property>
+    </item>
    </widget>
    <widget class="QPushButton" name="StartButton">
     <property name="geometry">
      <rect>
-      <x>920</x>
+      <x>910</x>
       <y>270</y>
       <width>150</width>
       <height>40</height>
@@ -68,7 +86,7 @@
      <string>Start</string>
     </property>
    </widget>
-   <widget class="QTableWidget" name="tableWidget">
+   <widget class="QTableWidget" name="cars_widget">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -90,8 +108,11 @@
      <string notr="true">color: rgb(166, 0, 0);
 font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
+    <attribute name="horizontalHeaderMinimumSectionSize">
+     <number>66</number>
+    </attribute>
     <attribute name="horizontalHeaderDefaultSectionSize">
-     <number>276</number>
+     <number>255</number>
     </attribute>
     <attribute name="verticalHeaderDefaultSectionSize">
      <number>80</number>
@@ -136,7 +157,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
    <widget class="QLineEdit" name="PlateNum">
     <property name="geometry">
      <rect>
-      <x>470</x>
+      <x>440</x>
       <y>410</y>
       <width>150</width>
       <height>40</height>
@@ -160,9 +181,9 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
    <widget class="QPushButton" name="SearchButton">
     <property name="geometry">
      <rect>
-      <x>650</x>
+      <x>599</x>
       <y>410</y>
-      <width>150</width>
+      <width>201</width>
       <height>40</height>
      </rect>
     </property>
@@ -194,7 +215,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>470</x>
+      <x>440</x>
       <y>470</y>
       <width>150</width>
       <height>40</height>
@@ -218,7 +239,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>470</x>
+      <x>440</x>
       <y>530</y>
       <width>150</width>
       <height>40</height>
@@ -242,7 +263,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>470</x>
+      <x>440</x>
       <y>590</y>
       <width>150</width>
       <height>40</height>
@@ -263,7 +284,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>470</x>
+      <x>440</x>
       <y>650</y>
       <width>150</width>
       <height>40</height>
@@ -284,7 +305,7 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>470</x>
+      <x>440</x>
       <y>710</y>
       <width>150</width>
       <height>40</height>
@@ -338,8 +359,11 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
     <property name="text">
      <string/>
     </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
    </widget>
-   <widget class="QLabel" name="Picture1">
+   <widget class="QLabel" name="Picture2">
     <property name="geometry">
      <rect>
       <x>860</x>
@@ -355,8 +379,11 @@ background-color: rgb(255, 255, 255);</string>
     <property name="text">
      <string/>
     </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
    </widget>
-   <widget class="QLabel" name="Picture2">
+   <widget class="QLabel" name="Picture3">
     <property name="geometry">
      <rect>
       <x>860</x>
@@ -372,8 +399,11 @@ background-color: rgb(255, 255, 255);</string>
     <property name="text">
      <string/>
     </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
    </widget>
-   <widget class="QLabel" name="Picture3">
+   <widget class="QLabel" name="Picture1">
     <property name="geometry">
      <rect>
       <x>860</x>
@@ -388,6 +418,9 @@ background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QLabel" name="label_19">
@@ -417,9 +450,9 @@ background-color: rgb(255, 255, 255);</string>
    <widget class="QLabel" name="CityName">
     <property name="geometry">
      <rect>
-      <x>890</x>
+      <x>820</x>
       <y>410</y>
-      <width>150</width>
+      <width>261</width>
       <height>40</height>
      </rect>
     </property>
@@ -432,7 +465,7 @@ background-color: rgb(255, 255, 255);</string>
      <string notr="true">color: rgb(166, 0, 0);</string>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string/>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -444,7 +477,7 @@ background-color: rgb(255, 255, 255);</string>
       <x>970</x>
       <y>480</y>
       <width>120</width>
-      <height>30</height>
+      <height>40</height>
      </rect>
     </property>
     <property name="font">
@@ -465,7 +498,7 @@ background-color: rgb(255, 255, 255);</string>
       <x>970</x>
       <y>590</y>
       <width>120</width>
-      <height>30</height>
+      <height>40</height>
      </rect>
     </property>
     <property name="font">
@@ -486,7 +519,7 @@ background-color: rgb(255, 255, 255);</string>
       <x>970</x>
       <y>700</y>
       <width>120</width>
-      <height>30</height>
+      <height>40</height>
      </rect>
     </property>
     <property name="font">
@@ -533,130 +566,95 @@ background-color: rgb(255, 255, 255);</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLineEdit" name="PlateNum_2">
+   <widget class="QLabel" name="make_model">
     <property name="geometry">
      <rect>
-      <x>650</x>
+      <x>599</x>
       <y>470</y>
-      <width>150</width>
+      <width>201</width>
       <height>40</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>15</pointsize>
-     </font>
-    </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(166, 0, 0);</string>
+     <string notr="true">color: rgb(166, 0, 0);
+background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string/>
     </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
    </widget>
-   <widget class="QLineEdit" name="city">
+   <widget class="QLabel" name="city">
     <property name="geometry">
      <rect>
-      <x>650</x>
+      <x>599</x>
       <y>710</y>
-      <width>150</width>
+      <width>201</width>
       <height>40</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>15</pointsize>
-     </font>
-    </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(166, 0, 0);</string>
+     <string notr="true">color: rgb(166, 0, 0);
+background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string/>
     </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
    </widget>
-   <widget class="QLineEdit" name="year">
+   <widget class="QLabel" name="kilometer">
     <property name="geometry">
      <rect>
-      <x>650</x>
-      <y>650</y>
-      <width>150</width>
-      <height>40</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>15</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(166, 0, 0);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="price">
-    <property name="geometry">
-     <rect>
-      <x>650</x>
-      <y>590</y>
-      <width>150</width>
-      <height>40</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>15</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(166, 0, 0);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="kilometer">
-    <property name="geometry">
-     <rect>
-      <x>650</x>
+      <x>599</x>
       <y>530</y>
-      <width>150</width>
+      <width>201</width>
       <height>40</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>15</pointsize>
-     </font>
-    </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(166, 0, 0);</string>
+     <string notr="true">color: rgb(166, 0, 0);
+background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string/>
     </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
+   </widget>
+   <widget class="QLabel" name="year">
+    <property name="geometry">
+     <rect>
+      <x>599</x>
+      <y>650</y>
+      <width>201</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(166, 0, 0);
+background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="price">
+    <property name="geometry">
+     <rect>
+      <x>599</x>
+      <y>590</y>
+      <width>201</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(166, 0, 0);
+background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
    <zorder>label_8</zorder>
    <zorder>Models</zorder>
    <zorder>StartButton</zorder>
-   <zorder>tableWidget</zorder>
+   <zorder>cars_widget</zorder>
    <zorder>label</zorder>
    <zorder>PlateNum</zorder>
    <zorder>SearchButton</zorder>
@@ -668,19 +666,19 @@ background-color: rgb(255, 255, 255);</string>
    <zorder>label_7</zorder>
    <zorder>Total</zorder>
    <zorder>CarPicture</zorder>
-   <zorder>Picture1</zorder>
    <zorder>Picture2</zorder>
    <zorder>Picture3</zorder>
+   <zorder>Picture1</zorder>
    <zorder>label_19</zorder>
    <zorder>CityName</zorder>
    <zorder>FirstDay</zorder>
    <zorder>SecondDay</zorder>
    <zorder>ThirdDay</zorder>
-   <zorder>PlateNum_2</zorder>
+   <zorder>make_model</zorder>
    <zorder>city</zorder>
+   <zorder>kilometer</zorder>
    <zorder>year</zorder>
    <zorder>price</zorder>
-   <zorder>kilometer</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

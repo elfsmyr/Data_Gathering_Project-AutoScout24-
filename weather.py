@@ -9,18 +9,15 @@ class Weather():
         self.result = self.result.json()["forecast"]["forecastday"]
     
     def three_days(self):
-        info=[]
+        info = []
+        
         for i in self.result:
             day=[]
             day.append(i ["date"])
             day.append(i ["day"] ["maxtemp_c"])
             day.append(i ["day"] ["mintemp_c"])
             day.append(i ["day"] ["condition"]["icon"])
-            info.append(day)
+            info.append(day)    
             
         return info
         
-    
-
-a=Weather("rotterdam")
-print(a.three_days())
