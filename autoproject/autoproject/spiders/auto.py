@@ -43,4 +43,15 @@ class AutoSpider(scrapy.Spider):
             if plate=="":
                 plate='not found'
             image=response.css("picture.css-1uafc8p.e3j2jx20 img ::attr(src)").get()
+<<<<<<< HEAD
             yield {"brand":brand, "model":model,"price":price,"km":km,"year":year,"city":city,"plate":plate, "image":image}
+=======
+            yield {"brand":brand, "model":model,"price":price,"km":km,"year":year,"city":city,"plate":plate, "image":image}
+    
+ 
+
+    
+
+        
+           
+>>>>>>> 20af2630667904edce73ca3e7cc9dc2d04935182
