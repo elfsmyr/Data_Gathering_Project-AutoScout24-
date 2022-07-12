@@ -12,8 +12,9 @@ class plate_selenium():
         
         time.sleep(2)
         
-        # entry=driver.find_element(By.XPATH,"//*[@id='tekst1']/div[2]/a[1]")
+        #entry=driver.find_element(By.XPATH,"//*[@id='tekst1']/div[2]/a[1]")
         # entry.click()
+        #driver.execute_script("arguments[0].click();", entry)
         # time.sleep(2)
 
         plate=driver.find_element(By.NAME,"kenteken")
@@ -25,6 +26,8 @@ class plate_selenium():
         buton.click()
         # driver.execute_script("arguments[0].click();", buton)
         
-        time.sleep(60)
+        
+        time.sleep(30)
         driver.quit()
+
  
