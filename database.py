@@ -52,7 +52,7 @@ class carsdata():
            SELECT COUNT(*) FROM cars  where brand = '{}'""".format(self.brand)
             )
             self.datanumber = self.cur.fetchall()
-            return self.datanumber[0][0]
+            return self.datanumber[0][0] 
         
         def close_(self):
             self.cur.close()

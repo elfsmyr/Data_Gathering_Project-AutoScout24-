@@ -7,7 +7,8 @@ class Weather():
         api_url = "http://api.weatherapi.com/v1/forecast.json?key=94fcb3a48d06483ea3b141553220707&q=" + city + ",NL&days=3"
         self.result = requests.get(api_url)
         self.result = self.result.json()["forecast"]["forecastday"]
-    
+        
+      
     def three_days(self):
         info = []
         
@@ -20,4 +21,4 @@ class Weather():
             info.append(day)    
             
         return info
-        
+
