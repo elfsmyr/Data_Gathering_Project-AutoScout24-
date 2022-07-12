@@ -27,7 +27,7 @@ class plate_selenium():
         # driver.execute_script("arguments[0].click();", buton)
         
         
-        time.sleep(30)
-        driver.quit()
+        
+      
 
  
