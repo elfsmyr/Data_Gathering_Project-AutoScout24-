@@ -2,6 +2,7 @@ from PyQt5 import QtWidgets,uic
 import weather 
 import database 
 import requests
+import search_selenium
 from PyQt5.QtWidgets import  QTableWidgetItem
 from PyQt5.QtGui import QImage , QPixmap
 
@@ -12,6 +13,7 @@ class StartWindow(QtWidgets.QMainWindow):
         super(StartWindow, self).__init__()
         uic.loadUi('CarUI.ui', self)
         self.StartButton.clicked.connect(self.data_info)
+        self.SearchButton.clicked.connect(self.data_search)
         self.cars_widget.clicked.connect(self.on_click)
         self.show()
    
@@ -77,8 +79,7 @@ class StartWindow(QtWidgets.QMainWindow):
     def plate_search(self,plate):
         self.plate=plate
         self.PlateNum.setText(self.plate)
-        
-       
-        
-        
-
+    
+    def data_search(self):
+        self.plate=self.PlateNum.text()
+        search_selenium.plate_selenium(self.plate)
