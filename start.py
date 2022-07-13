@@ -10,8 +10,14 @@ class StartWindow(QtWidgets.QMainWindow):
     
     def __init__(self):
         self.obj = database.carsdata()
+        self.image=QImage()
         super(StartWindow, self).__init__()
         uic.loadUi('CarUI.ui', self)
+        self.weather_info("Amsterdam")
+        self.CityName.setText("Amsterdam")
+        self.url_image="https://www.autocar.co.uk/sites/autocar.co.uk/files/slideshow_image/1a-entry2.jpg"
+        self.image.loadFromData(requests.get(self.url_image).content)
+        self.CarPicture.setPixmap(QPixmap(self.image))
         self.StartButton.clicked.connect(self.data_info)
         self.SearchButton.clicked.connect(self.data_search)
         self.cars_widget.clicked.connect(self.on_click)
@@ -55,12 +61,12 @@ class StartWindow(QtWidgets.QMainWindow):
         self.year.setText(self.year_)
         self.city.setText(self.cityname)
         self.CityName.setText(self.cityname)
-        self.image=QImage()
         self.image.loadFromData(requests.get(self.url_image).content)
         self.CarPicture.setPixmap(QPixmap(self.image))
-        self.weather_info()
+        self.weather_info(self.cityname)
         
-    def weather_info(self):
+    def weather_info(self,cityname):
+        self.cityname=cityname
         a = weather.Weather(self.cityname)
         self.day1,self.day2,self.day3 = a.three_days()
         self.FirstDay.setText(self.day1[0]+"\n"+str(self.day1[2])+"-"+str(self.day1[1])+"°C")
